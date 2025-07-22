@@ -3,6 +3,7 @@ import 'simplelightbox/dist/simple-lightbox.min.css';
 
 const gallery = document.querySelector('.gallery');
 const loader = document.querySelector('.loader');
+const loadMoreButton = document.querySelector('.load-more');
 
 let lightbox;
 
@@ -17,30 +18,18 @@ export function createGallery(images) {
         views,
         comments,
         downloads,
-      }) =>
-        `<li class="gallery-item">
-      <a class="gallery-link" href="${largeImageURL}">
-        <img class="gallery-image" src="${webformatURL}" alt="${tags}" width="360" height="200" />
-      </a>
-      <ul class="gallery-info">
-        <li class="info-block">
-          <p class="label">Likes</p>
-          <p class="value">${likes}</p>
-        </li>
-        <li class="info-block">
-          <p class="label">Views</p>
-          <p class="value">${views}</p>
-        </li>
-        <li class="info-block">
-          <p class="label">Comments</p>
-          <p class="value">${comments}</p>
-        </li>
-        <li class="info-block">
-          <p class="label">Downloads</p>
-          <p class="value">${downloads}</p>
-        </li>
-      </ul>
-    </li>`
+      }) => `
+        <li class="gallery-item">
+          <a class="gallery-link" href="${largeImageURL}">
+            <img class="gallery-image" src="${webformatURL}" alt="${tags}" width="360" height="200" />
+          </a>
+          <ul class="gallery-info">
+            <li class="info-block"><p class="label">Likes</p><p class="value">${likes}</p></li>
+            <li class="info-block"><p class="label">Views</p><p class="value">${views}</p></li>
+            <li class="info-block"><p class="label">Comments</p><p class="value">${comments}</p></li>
+            <li class="info-block"><p class="label">Downloads</p><p class="value">${downloads}</p></li>
+          </ul>
+        </li>`
     )
     .join('');
 
@@ -66,4 +55,12 @@ export function showLoader() {
 
 export function hideLoader() {
   loader.classList.add('is-hidden');
+}
+
+export function showLoadMoreButton() {
+  loadMoreButton.classList.remove('is-hidden');
+}
+
+export function hideLoadMoreButton() {
+  loadMoreButton.classList.add('is-hidden');
 }

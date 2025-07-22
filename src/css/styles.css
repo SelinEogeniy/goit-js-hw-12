@@ -7,12 +7,12 @@
 /* Common styles */
 @import url('./reset.css');
 
-/* Todo=============Form============== */
 body {
   text-align: center;
   padding-bottom: 200px;
 }
 
+/*Todo ============ Form ============*/
 .form {
   display: inline-block;
   margin-top: 36px;
@@ -38,12 +38,12 @@ body {
 .form input:hover {
   border: 1px solid #000;
 }
+
 .form input:focus {
   border: 1px solid #4e75ff;
 }
 
 /* Todo============Button============= */
-
 .form button {
   border-radius: 8px;
   width: 91px;
@@ -51,7 +51,6 @@ body {
   background: #4e75ff;
   border: none;
   outline: none;
-
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
   font-size: 16px;
@@ -66,14 +65,16 @@ body {
 
 /* Todo============Gallery============= */
 .gallery {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
   gap: 24px;
   justify-content: center;
+  padding: 0;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .gallery-item {
-  width: 360px;
   border: 1px solid #808080;
   overflow: hidden;
   background: #fff;
@@ -126,6 +127,7 @@ body {
   color: #2e2f42;
 }
 
+/* Todo============Loader============= */
 .loader {
   border: 2px solid #fff;
   width: 48px;
@@ -139,7 +141,6 @@ body {
   animation: rotation 2s linear infinite;
 }
 
-/* Todo============Loader============= */
 .loader::after {
   content: '';
   box-sizing: border-box;
@@ -161,6 +162,32 @@ body {
   }
 }
 
+/* Todo============Load More Button============= */
+.load-more {
+  display: inline-block;
+  border-radius: 8px;
+  min-width: 140px;
+  padding: 0 20px;
+  height: 40px;
+  background: #4e75ff;
+  border: none;
+  outline: none;
+  margin-top: 32px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #fff;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.load-more:hover {
+  background: #6c8cff;
+}
+
+/* Todo============Utility============= */
 .is-hidden {
   display: none;
 }
