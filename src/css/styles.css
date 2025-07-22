@@ -1,0 +1,166 @@
+/**
+  |============================
+  | include css partials with
+  | default @import url()
+  |============================
+*/
+/* Common styles */
+@import url('./reset.css');
+
+/* Todo=============Form============== */
+body {
+  text-align: center;
+  padding-bottom: 200px;
+}
+
+.form {
+  display: inline-block;
+  margin-top: 36px;
+  margin-bottom: 32px;
+}
+
+.form input {
+  width: 272px;
+  height: 40px;
+  padding-left: 16px;
+  border: 1px solid #808080;
+  border-radius: 4px;
+  outline: none;
+  /*?============= Text============== */
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
+}
+
+.form input:hover {
+  border: 1px solid #000;
+}
+.form input:focus {
+  border: 1px solid #4e75ff;
+}
+
+/* Todo============Button============= */
+
+.form button {
+  border-radius: 8px;
+  width: 91px;
+  height: 40px;
+  background: #4e75ff;
+  border: none;
+  outline: none;
+
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #fff;
+}
+
+.form button:hover {
+  background: #6c8cff;
+}
+
+/* Todo============Gallery============= */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+}
+
+.gallery-item {
+  width: 360px;
+  border: 1px solid #808080;
+  overflow: hidden;
+  background: #fff;
+}
+
+.gallery-image {
+  display: block;
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+}
+
+.gallery-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 25px;
+  height: 48px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 133%;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
+}
+
+.info-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.label {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 133%;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
+}
+
+.value {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 200%;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
+}
+
+.loader {
+  border: 2px solid #fff;
+  width: 48px;
+  height: 48px;
+  background: #4e75ff;
+  border-radius: 50%;
+  display: block;
+  margin: 20px auto;
+  position: relative;
+  box-sizing: border-box;
+  animation: rotation 2s linear infinite;
+}
+
+/* Todo============Loader============= */
+.loader::after {
+  content: '';
+  box-sizing: border-box;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border: 24px solid;
+  border-color: transparent #fff;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.is-hidden {
+  display: none;
+}
